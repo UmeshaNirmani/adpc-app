@@ -14,7 +14,7 @@ import DropFileInput from "./DropFileInput";
 const LoginForm = ({ Login, error }) => {
   const [details, setDetails] = useState({
     name: "",
-    password: "",
+    Password: "",
     dropFiles: "",
   });
 
@@ -35,8 +35,11 @@ const LoginForm = ({ Login, error }) => {
   const textStyle = { width: 300, margin: "10px auto" };
   const buttonStyle = { padding: 15, width: 300, margin: "10px auto" };
   const onFileChange = (files) => {
+    setDetails({ ...details, dropFiles: files[0].name });
     console.log(files);
+    console.log("file name: ", files[0].name);
   };
+
   // const FormControlLabel={backgroundColor:'#1bbd7e'}
 
   return (
@@ -69,7 +72,7 @@ const LoginForm = ({ Login, error }) => {
           id="Password"
           placeholder="Enter Password"
           type="Password"
-          name="password"
+          name="Password"
           fullWidth
           required
           style={textStyle}
@@ -84,9 +87,9 @@ const LoginForm = ({ Login, error }) => {
           fullWidth
           required
           style={textStyle}
-          onChange={(e) =>
-            setDetails({ ...details, dropFiles: e.target.value })
-          }
+          // onChangeFile={(e) =>
+          //   setDetails({ ...details, dropFiles: e.target.value })
+          // }
           value={details.dropFiles}
         />
 
