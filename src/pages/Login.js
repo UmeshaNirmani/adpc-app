@@ -1,9 +1,10 @@
-import "./App.css";
+// import "./Style.css";
 import React, { useState } from "react";
-import LoginForm from "./components/drop-file-input/login";
+import LoginForm from "../components/drop-file-input/login-form";
 // import { Details } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
-function App() {
+function Login() {
   const [user, setUser] = useState({ name: "", Password: "", dropFiles: "" });
   const [error] = useState("");
   const welcome = {
@@ -43,6 +44,11 @@ function App() {
           <h3>Password is :{user.Password}</h3>
           <h3>{user.dropFiles}</h3>
           <button onClick={Logout}>Logout</button>
+          <nav>
+            <Link to="/pagination" className="link">
+              Pagination
+            </Link>
+          </nav>
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />
@@ -51,4 +57,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

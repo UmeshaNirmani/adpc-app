@@ -9,7 +9,7 @@ import {
   Button,
 } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import DropFileInput from "./DropFileInput";
+import DropFileInput from "./drop-file-input";
 
 const LoginForm = ({ Login, error }) => {
   const [details, setDetails] = useState({
@@ -20,7 +20,6 @@ const LoginForm = ({ Login, error }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     Login(details);
   };
 
